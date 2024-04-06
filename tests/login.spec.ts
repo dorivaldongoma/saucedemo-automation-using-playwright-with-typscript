@@ -51,4 +51,15 @@ test.describe('Login tests', async () =>{
         const errorMessage = page.getByText(errorMessages[0]);
         await expect(errorMessage).toBeVisible();
     })
+
+    test('CT5 - The user login with invalid username and password', async ({ page }) => {
+        await page.locator("[name='user-name']").fill('1234');
+        await page.locator("[name='password']").fill('1234');
+
+        await page.locator("[name='login-button']").click();
+
+        const errorMessage = page.getByText(errorMessages[0]);
+        await expect(errorMessage).toBeVisible();
+    })
+
 })
