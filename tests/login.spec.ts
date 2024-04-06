@@ -89,4 +89,11 @@ test.describe('Login tests', async () =>{
         await expect(errorMessage).toBeVisible();
     })
 
+    test('CT9 - The user login with empty username and password', async ({ page }) => {
+        await page.locator("[name='login-button']").click();
+
+        const errorMessage = page.getByText(errorMessages[2]);
+        await expect(errorMessage).toBeVisible();
+    })
+
 })
