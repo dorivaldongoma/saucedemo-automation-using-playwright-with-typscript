@@ -1,0 +1,24 @@
+{
+  "name": "saucedemo-automation-using-playwright-with-typscript",
+  "version": "1.0.0",
+  "description": "Projeto de automação de testes no saucedemo usando playwright com \u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dcom\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C Playwright e Typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dorivaldongoma/saucedemo-automation-using-playwright-with-typscript.git"
+  },
+  "author": "Dorivaldo Ngoma",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dorivaldongoma/saucedemo-automation-using-playwright-with-typscript/issues"
+  },
+  "homepage": "https://github.com/dorivaldongoma/saucedemo-automation-using-playwright-with-typscript#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.43.0",
+    "@types/node": "^20.12.5",
+    "typescript": "^5.4.4"
+  }
+}
