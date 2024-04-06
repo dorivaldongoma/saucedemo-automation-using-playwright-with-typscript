@@ -8,7 +8,7 @@ test.beforeEach(async ({ page }) => {
 const errorMessages = [
     'Epic sadface: Username and password do not match any user in this service',
     'Epic sadface: Password is required',
-    'Epic sadface: Username is required'
+    'Epic sadface: Username is required',
 ];
 
 test.describe('Login tests', async () =>{
@@ -59,6 +59,15 @@ test.describe('Login tests', async () =>{
         await page.locator("[name='login-button']").click();
 
         const errorMessage = page.getByText(errorMessages[0]);
+        await expect(errorMessage).toBeVisible();
+    })
+
+    test('CT6 - The user login with invalid username and empty password', async ({ page }) => {
+        await page.locator("[name='user-name']").fill('1234');
+
+        await page.locator("[name='login-button']").click();
+
+        const errorMessage = page.getByText(errorMessages[1]);
         await expect(errorMessage).toBeVisible();
     })
 
