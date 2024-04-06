@@ -5,6 +5,12 @@ test.beforeEach(async ({ page }) => {
     await expect(page.getByText('Swag Labs')).toBeVisible();
 });
 
+const errorMessages = [
+    'Epic sadface: Username and password do not match any user in this service',
+    'Epic sadface: Password is required',
+];
+
+
 test.describe('Login tests', async () =>{
 
     test('CT1 - The user login with valid username and password', async ({ page }) => {
@@ -23,7 +29,17 @@ test.describe('Login tests', async () =>{
 
         await page.locator("[name='login-button']").click();
 
-        const errorMessage = page.getByText('Epic sadface: Username and password do not match any user in this service');
+        const errorMessage = page.getByText(errorMessages[0]);
         await expect(errorMessage).toBeVisible();
     })
+
+    test('CT3 - The user login with valid username and empty password', async ({ page }) => {
+        await page.locator("[name='user-name']").fill('standard_user');
+
+        await page.locator("[name='login-button']").click();
+
+        const errorMessage = page.getByText(errorMessages[1]);
+        await expect(errorMessage).toBeVisible();
+    })
+
 })
