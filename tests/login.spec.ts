@@ -80,4 +80,13 @@ test.describe('Login tests', async () =>{
         await expect(errorMessage).toBeVisible();
     })
 
+    test('CT8 - The user login with empty username and invalid password', async ({ page }) => {
+        await page.locator("[name='password']").fill('1234');
+
+        await page.locator("[name='login-button']").click();
+
+        const errorMessage = page.getByText(errorMessages[2]);
+        await expect(errorMessage).toBeVisible();
+    })
+
 })
